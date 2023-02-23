@@ -12,10 +12,10 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-import numpy as np
 from abc import ABC, abstractmethod
 from typing import List, Tuple
 
+import numpy as np
 import torch
 
 from nemo.utils.decorators import experimental
@@ -108,7 +108,6 @@ class TextTokenizer(ABC):
 
 
 class AudioProcessor(ABC):
-
     @abstractmethod
     def compute_spectrogram(self, audio: torch.tensor, audio_len: torch.tensor) -> Tuple[torch.tensor, torch.tensor]:
         """

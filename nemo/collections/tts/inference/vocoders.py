@@ -16,11 +16,8 @@ from torch import Tensor
 
 from nemo.collections.tts.inference.pipeline import Vocoder
 from nemo.collections.tts.models import HifiGanModel
-from nemo.core.classes.common import typecheck, Typing
-from nemo.core.neural_types.elements import (
-    AudioSignal,
-    MelSpectrogramType,
-)
+from nemo.core.classes.common import Typing, typecheck
+from nemo.core.neural_types.elements import AudioSignal, MelSpectrogramType
 from nemo.core.neural_types.neural_type import NeuralType
 
 

@@ -16,13 +16,8 @@ from torch import Tensor
 
 from nemo.collections.tts.inference.pipeline import SpectrogramSynthesizer
 from nemo.collections.tts.models import FastPitchModel
-from nemo.core.classes.common import typecheck, Typing
-from nemo.core.neural_types.elements import (
-    Index,
-    MelSpectrogramType,
-    RegressionValuesType,
-    TokenIndex,
-)
+from nemo.core.classes.common import Typing, typecheck
+from nemo.core.neural_types.elements import Index, MelSpectrogramType, RegressionValuesType, TokenIndex
 from nemo.core.neural_types.neural_type import NeuralType
 
 

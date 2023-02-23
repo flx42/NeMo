@@ -13,19 +13,18 @@
 # limitations under the License.
 
 import os
-import pytest
 import unittest
+
+import pytest
+from nemo_text_processing.text_normalization.normalize import Normalizer
 
 from nemo.collections.common.tokenizers.text_to_speech.tts_tokenizers import IPATokenizer
 from nemo.collections.tts.g2p.modules import IPAG2P
-from nemo_text_processing.text_normalization.normalize import Normalizer
-from nemo.collections.tts.inference.text_processors import BaseTextProcessor, IPATextTokenizer
-
 from nemo.collections.tts.inference.pipeline import TTSPipeline
 from nemo.collections.tts.inference.spectrogram_synthesizers import FastPitchSpectrogramSynthesizer
+from nemo.collections.tts.inference.text_processors import BaseTextProcessor, IPATextTokenizer
 from nemo.collections.tts.inference.vocoders import HifiGanVocoder
-from nemo.collections.tts.models import FastPitchModel
-from nemo.collections.tts.models import HifiGanModel
+from nemo.collections.tts.models import FastPitchModel, HifiGanModel
 
 
 class TestTTSPipeline(unittest.TestCase):
