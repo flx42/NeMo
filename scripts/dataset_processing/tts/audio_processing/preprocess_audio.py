@@ -170,9 +170,9 @@ def main(cfg):
         output_durations += output_duration
         output_entries.append(output_entry)
 
-    write_manifest(manifest_path=str(output_manifest_path), entries=output_entries)
+    write_manifest(output_path=str(output_manifest_path), target_manifest=output_entries)
     if filter_file:
-        write_manifest(manifest_path=str(filter_file), entries=filtered_entries)
+        write_manifest(output_path=str(filter_file), target_manifest=filtered_entries)
 
     logging.info(f"Duration of original audio: {original_durations / 3600} hours")
     logging.info(f"Duration of processed audio: {output_durations / 3600} hours")
