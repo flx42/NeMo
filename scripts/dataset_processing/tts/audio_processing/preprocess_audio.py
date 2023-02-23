@@ -42,8 +42,9 @@ from hydra.utils import instantiate
 from joblib import Parallel, delayed
 from tqdm import tqdm
 
+from nemo.collections.asr.parts.utils.manifest_utils import read_manifest, write_manifest
 from nemo.collections.tts.data.audio_trimming import AudioTrimmer
-from nemo.collections.tts.data.data_utils import normalize_volume, read_manifest, write_manifest
+from nemo.collections.tts.data.data_utils import normalize_volume
 from nemo.collections.tts.torch.helpers import get_base_dir
 from nemo.core.config import hydra_runner
 from nemo.utils import logging
@@ -133,7 +134,7 @@ def main(cfg):
 
     output_dir.mkdir(exist_ok=True, parents=True)
 
-    entries = read_manifest(input_manifest_path)
+    entries = read_manifest(str(input_manifest_path))
     if max_entries:
         entries = entries[:max_entries]
 
@@ -169,9 +170,9 @@ def main(cfg):
         output_durations += output_duration
         output_entries.append(output_entry)
 
-    write_manifest(manifest_path=output_manifest_path, entries=output_entries)
+    write_manifest(manifest_path=str(output_manifest_path), entries=output_entries)
     if filter_file:
-        write_manifest(manifest_path=filter_file, entries=filtered_entries)
+        write_manifest(manifest_path=str(filter_file), entries=filtered_entries)
 
     logging.info(f"Duration of original audio: {original_durations / 3600} hours")
     logging.info(f"Duration of processed audio: {output_durations / 3600} hours")

@@ -34,7 +34,8 @@ from typing import List, Tuple
 import torch
 from tqdm import tqdm
 
-from nemo.collections.tts.data.data_utils import get_sup_data_file_path, read_manifest
+from nemo.collections.asr.parts.utils.manifest_utils import read_manifest
+from nemo.collections.tts.data.data_utils import get_sup_data_file_path
 from nemo.collections.tts.torch.helpers import get_base_dir
 from nemo.collections.tts.torch.tts_data_types import Pitch
 from nemo.utils import logging
@@ -80,7 +81,7 @@ def main():
             f"and that you have computed the pitch using extract_sup_data.py"
         )
 
-    entries = read_manifest(manifest_path)
+    entries = read_manifest(str(manifest_path))
 
     audio_paths = [entry["audio_filepath"] for entry in entries]
     base_dir = get_base_dir(audio_paths)
