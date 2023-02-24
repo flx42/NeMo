@@ -14,13 +14,13 @@
 
 import pytest
 
+from nemo.collections.common.g2p.i18n_ipa import IPAG2P
 from nemo.collections.common.tokenizers.text_to_speech.tts_tokenizers import (
     EnglishCharsTokenizer,
     GermanCharsTokenizer,
     IPATokenizer,
     SpanishCharsTokenizer,
 )
-from nemo.collections.tts.g2p.modules import IPAG2P
 
 
 class TestTTSTokenizers:
