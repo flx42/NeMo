@@ -32,7 +32,7 @@ from nemo.utils.decorators import experimental
 
 
 @experimental
-class IPAG2P(BaseG2p):
+class IpaG2p(BaseG2p):
     # fmt: off
     STRESS_SYMBOLS = ["ˈ", "ˌ"]
     # Regex for roman characters, accented characters, and locale-agnostic numbers/digits

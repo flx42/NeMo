@@ -119,7 +119,7 @@ Tokenization converts input text string to a list of integer tokens. It may pad 
       apostrophe: true
       pad_with_space: true
       g2p:
-        _target_: nemo.collections.tts.g2p.modules.EnglishG2p
+        _target_: nemo.collections.common.g2p.en_us_arpabet.EnglishG2p
         phoneme_dict: ${phoneme_dict_path}
         heteronyms: ${heteronyms_path}
       phoneme_probability: 0.5
