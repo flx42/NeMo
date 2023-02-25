@@ -42,6 +42,7 @@ class BaseG2p(ABC):
     def __call__(self, text: str) -> str:
         pass
 
+    # TODO @xueyang: replace `wordid_to_phonemes_file` default variable with a global variable defined in util file.
     def setup_heteronym_model(
         self,
         heteronym_model,
