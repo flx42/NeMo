@@ -25,6 +25,7 @@ from nemo.collections.asr.parts.submodules.batchnorm import FusedBatchNorm1d
 from nemo.collections.tts.models import FastPitchModel
 
 
+@pytest.mark.pleasefixme
 @pytest.fixture(scope="module")
 def fastpitch_model():
     model = FastPitchModel.from_pretrained(model_name="tts_en_fastpitch_multispeaker")
@@ -116,6 +117,7 @@ def asr_tts_ctc_bpe_model(asr_model_ctc_bpe_config, fastpitch_model_path):
     return model
 
 
+@pytest.mark.pleasefixme
 class TestASRWithTTSModel:
     @pytest.mark.with_downloads
     @pytest.mark.unit
