@@ -22,7 +22,6 @@ from nemo.collections.tts.models import FastPitchModel, HifiGanModel, RadTTSMode
 from nemo.utils.app_state import AppState
 
 
-@pytest.mark.pleasefixme
 @pytest.fixture()
 def fastpitch_model():
     model = FastPitchModel.from_pretrained(model_name="tts_en_fastpitch")
@@ -61,7 +60,6 @@ def radtts_model():
 
 
 class TestExportable:
-    @pytest.mark.pleasefixme
     @pytest.mark.run_only_on('GPU')
     @pytest.mark.unit
     def test_FastPitchModel_export_to_onnx(self, fastpitch_model):
