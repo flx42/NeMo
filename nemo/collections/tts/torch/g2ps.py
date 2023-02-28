@@ -12,9 +12,11 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+# fmt: off
 # TODO: This file will be deprecated from NeMo release r1.18.0. Please use new import path instead.
 from nemo.collections.common.g2p.en_us_arpabet import EnglishG2p
 from nemo.collections.common.g2p.zh_cn_pinyin import ChineseG2p
 
 # TODO: `IPAG2P` will be deprecated and renamed from NeMo release r1.18.0. Please use `IpaG2p` instead.
 from nemo.collections.common.g2p.i18n_ipa import IpaG2p as IPAG2P
+# fmt: on
