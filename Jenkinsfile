@@ -1,7 +1,7 @@
 pipeline {
   agent {
         docker {
-          image 'gitlab-master.nvidia.com:5005/slym/images/pytorch/bignlp-amax_red:23.02-bbe0a8a8'
+          image 'gitlab-master.nvidia.com/slym/images/pytorch/bignlp-amax_red:23.02-bbe0a8a8'
           args '--device=/dev/nvidia0 --gpus all --user 0:128 -v /home/TestData:/home/TestData -v $HOME/.cache:/root/.cache --shm-size=8g'
         }
   }
